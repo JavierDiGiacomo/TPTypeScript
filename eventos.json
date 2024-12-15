@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Conferencia sobre TypeScript",
+    "fecha": "2024-06-15T13:00:00.000Z",
+    "ubicacion": "Madrid, España",
+    "asistentes": [
+      "Juan Pérez",
+      "Ana Gómez",
+      "Luis Sánchez"
+    ],
+    "tipo": "Conferencia"
+  },
+  {
+    "titulo": "Taller de React",
+    "fecha": "2024-08-20T17:30:00.000Z",
+    "ubicacion": "Barcelona, España",
+    "asistentes": [
+      "María Fernández",
+      "Carlos López"
+    ],
+    "tipo": "Taller"
+  }
+]
