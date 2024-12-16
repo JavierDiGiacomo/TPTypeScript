@@ -34,9 +34,12 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Comun = void 0;
+// Se utliza el modulo por defecto de node JS para poder exportar a formato JSON
 const fs = __importStar(require("fs"));
+// El namespace Comun contiene clases comunes que son utilizadas por otras clases.
 var Comun;
 (function (Comun) {
+    // Representa la clase ayuda que contiene las funciones.
     class Ayuda {
         // Método para exportar los eventos a un archivo JSON, esta clase permite recibir una interfaz IEvento
         // esta hecha asi para que a futuro se puede pasar cualquier clase derivada de la interfaz-

@@ -1,14 +1,13 @@
+// Se importan archivos
 import { Evento } from "../models/Evento";
 import { TipoDeEvento } from "../models/TipoDeEvento";
-
-import * as fs from "fs";
 
 import { Comun } from "../util/Comun";
 
 // El namespace representa el modulo que permite manejar las funcionalidades de Evento y TipoDeEvento
 export namespace SistemaDeEventos 
 {
-
+    // Representa la clase que contiene las funciones que permiten llevar adelanta la funcionalidad 
     export class Manejador 
     {
         eventos: Evento[] = [];
@@ -17,7 +16,10 @@ export namespace SistemaDeEventos
         anadirEvento(evento: Evento): void 
         {
             this.eventos.push(evento);
+
+            // Muestra en consola los resultados
             console.log("Evento añadido correctamente.");
+            console.log("-------------------------------");
         }
 
         // Método para mostrar todos los eventos registrados
@@ -25,9 +27,10 @@ export namespace SistemaDeEventos
         {
             this.eventos.forEach((evento, index) => 
             {
-            console.log(`Evento ${index + 1}:`);
-            evento.mostrarDetalles();
-            console.log("-------------------------------");
+                // Muestra en consola los resultados
+                console.log(`Evento ${index + 1}:`);
+                evento.mostrarDetalles();
+                console.log("-------------------------------");
             }
             );
         }
@@ -38,12 +41,15 @@ export namespace SistemaDeEventos
             const eventosFiltrados = this.eventos.filter(evento => evento.tipo === tipo);
             if (eventosFiltrados.length === 0) 
             {
+                // Muestra en consola los resultados
                 console.log(`No se encontraron eventos de tipo ${tipo}.`);
+                console.log("-------------------------------");
                 return;
             }
 
             eventosFiltrados.forEach((evento, index) => 
             {
+                // Muestra en consola los resultados
                 console.log(`Evento ${index + 1}:`);
                 evento.mostrarDetalles();
                 console.log("-------------------------------");
@@ -58,8 +64,10 @@ export namespace SistemaDeEventos
             const totalAsistentes = this.eventos.reduce((acc, evento) => acc + evento.asistentes.length, 0);
             const promedioAsistentes = totalEventos > 0 ? totalAsistentes / totalEventos : 0;
 
+            // Muestra en consola los resultados
             console.log(`Total de eventos registrados: ${totalEventos}`);
             console.log(`Cantidad promedio de asistentes por evento: ${promedioAsistentes.toFixed(2)}`);
+            console.log("-------------------------------");
         }
 
         // Método para exportar los eventos a un archivo JSON, utiliza la clase Ayuda del namespace Comun, que permite 
@@ -68,7 +76,9 @@ export namespace SistemaDeEventos
         {
             const comun = new Comun.Ayuda();
 
+            // Muestra en consola los resultados
             comun.exportarAJson(this.eventos);
+            console.log("-------------------------------");
         }
     }
 }

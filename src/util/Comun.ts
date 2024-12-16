@@ -1,10 +1,13 @@
+// Se utliza el modulo por defecto de node JS para poder exportar a formato JSON
 import * as fs from "fs";
 
 import { Evento } from "../models/Evento";
 import { IEvento } from "../models/Evento";
 
+// El namespace Comun contiene clases comunes que son utilizadas por otras clases.
 export namespace Comun
 {
+    // Representa la clase ayuda que contiene las funciones.
     export class Ayuda
     {
         // Método para exportar los eventos a un archivo JSON, esta clase permite recibir una interfaz IEvento
